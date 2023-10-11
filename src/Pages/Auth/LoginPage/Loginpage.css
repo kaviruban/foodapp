@@ -1,33 +1,33 @@
-/* .login-container{
+.login-container{
     margin: 0 5%;
     height: 40vh;
     width : 50vh;
     border-radius: 5px;
    
     
-} */
+}
 
-/* .login-container input{
+.login-container input{
     height: 5vh;
     width : 45vh
-} */
+}
 
-/* 
+
 .auth-buttons{
     background: rgb(247, 195, 101);
     width : 20vh;
     height : 5vh;
     border-radius: 5px;
     margin-right: 2%;
-} */
+}
 
-/* .parent-login-container{
+.parent-login-container{
     display: flex;
     flex-direction: column;
     justify-content:center ;
     margin: 2%;
     align-items: center;
-} */
+}
 
 .login {
     width: 400px;

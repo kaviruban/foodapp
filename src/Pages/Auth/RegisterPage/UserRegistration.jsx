@@ -1,164 +1,38 @@
-// import React from "react";
-// import "./Registerpage.css";
-// import { useNavigate } from "react-router-dom";
+import React from "react";
+import "./Registerpage.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-// function UserRegistration() {
-//   const navigate = useNavigate();
-//   return (
-//     <>
-//       <h2>Register</h2>
-//       <div className="register-container">
-//         <form>
-//           <label htmlFor="">User name</label>
-//           <input type="text" placeholder="Enter your name" />
-//           <label htmlFor="">E-mail</label>
-//           <input type="text" placeholder="Enter your E-mail" />
-//           <label htmlFor="">Password</label>
-//           <input type="text" placeholder="Enter your password " />
-//           <label htmlFor="">Confirm Password</label>
-//           <input type="password" placeholder="confirm your password" />
-//         </form>
-//         <div>
-//           <button className="register-button" onClick={() => navigate("/")}>Register</button>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default UserRegistration;
-
-
-import React, { useEffect, useState } from "react";
-import basestyle from "../Base.module.css";
-import registerstyle from "./Registerpage.css";
-import axios from "axios";
-
-import { useNavigate, NavLink } from "react-router-dom";
-const Register = () => {
+function UserRegistration() {
   const navigate = useNavigate();
 
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [user, setUserDetails] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    password: "",
-    cpassword: "",
-  });
-
-  const changeHandler = (e) => {
-    const { name, value } = e.target;
-    setUserDetails({
-      ...user,
-      [name]: value,
-    });
-  };
-
-  const validateForm = (values) => {
-    const error = {};
-    const regex = /^[^\s+@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.fname) {
-      error.fname = "First Name is required";
-    }
-    if (!values.lname) {
-      error.lname = "Last Name is required";
-    }
-    if (!values.email) {
-      error.email = "Email is required";
-    } else if (!regex.test(values.email)) {
-      error.email = "This is not a valid email format!";
-    }
-    if (!values.password) {
-      error.password = "Password is required";
-    } else if (values.password.length < 4) {
-      error.password = "Password must be more than 4 characters";
-    } else if (values.password.length > 10) {
-      error.password = "Password cannot exceed more than 10 characters";
-    }
-    if (!values.cpassword) {
-      error.cpassword = "Confirm Password is required";
-    } else if (values.cpassword !== values.password) {
-      error.cpassword = "Confirm password and password should be same";
-    }
-    return error;
-  };
-  const signupHandler = (e) => {
-    e.preventDefault();
-    setFormErrors(validateForm(user));
-    setIsSubmit(true);
-    // if (!formErrors) {
-    //   setIsSubmit(true);
-    // }
-  };
-
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(user);
-      axios.post("http://localhost:3000/register", user).then((res) => {
-        alert(res.data.message);
-        navigate("/login", { replace: true });
-      });
-    }
-  }, [formErrors]);
+  const[username , setUserName] = useState('');
+  const[useremail , setUserEmail] = useState('');
+  const[password , setPassword] = useState('');
+  const[confirmpassword , setConfirmPassword] = useState('');
+  const[name , setName] = useState('');
+  
   return (
     <>
-      <div className={registerstyle.register}>
+      <h2>Register</h2>
+      <div className="register-container">
         <form>
-          <h1>Create your account</h1>
-          <input
-            type="text"
-            name="fname"
-            id="fname"
-            placeholder="First Name"
-            onChange={changeHandler}
-            value={user.fname}
-          />
-          <p className={basestyle.error}>{formErrors.fname}</p>
-          <input
-            type="text"
-            name="lname"
-            id="lname"
-            placeholder="Last Name"
-            onChange={changeHandler}
-            value={user.lname}
-          />
-          <p className={basestyle.error}>{formErrors.lname}</p>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            onChange={changeHandler}
-            value={user.email}
-          />
-          <p className={basestyle.error}>{formErrors.email}</p>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            onChange={changeHandler}
-            value={user.password}
-          />
-          <p className={basestyle.error}>{formErrors.password}</p>
-          <input
-            type="password"
-            name="cpassword"
-            id="cpassword"
-            placeholder="Confirm Password"
-            onChange={changeHandler}
-            value={user.cpassword}
-          />
-          <p className={basestyle.error}>{formErrors.cpassword}</p>
-          <button className={basestyle.button_common} onClick={signupHandler}>
-            Register
-          </button>
+          <label htmlFor="">User name</label>
+          <input type="text" placeholder="Enter your name" value = {username} onChange={e => setName(e.target.value)} />
+          <label htmlFor="">E-mail</label>
+          <input type="text" placeholder="Enter your E-mail" value = {useremail} onChange={e => setUserEmail(e.target.value)} />
+          <label htmlFor="">Password</label>
+          <input type="text" placeholder="Enter your password " value = {password} onChange={e => setPassword(e.target.value)}/>
+          <label htmlFor="">Confirm Password</label>
+          <input type="password" placeholder="confirm your password" value={confirmpassword} onChange={e => setConfirmPassword(e.target.value)} />
         </form>
-        <button onClick={() => navigate("/")}>Already registered? Login</button>
+        <div>
+          <button className="register-button" onClick={() => navigate("/")}>Register</button>
+        </div>
       </div>
     </>
   );
-};
-export default Register;
+}
+
+export default UserRegistration;
+

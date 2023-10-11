@@ -1,4 +1,4 @@
-/* .register-container{
+.register-container{
     margin-top: 2%;
     height: 30vh;
     width : 50vh;
@@ -13,10 +13,10 @@
     width : 30vh;
     height : 5vh;
     border-radius: 5px;
-} */
+}
 
 
-.register {
+/* .register {
     width: 400px;
     background: #fff;
     border: 1px solid #dddfe2;
@@ -36,4 +36,4 @@
     width: 90%;
     padding: 12px;
     font-size: 16px;
-}
+} */
