@@ -1,0 +1,136 @@
+input{
+    width : 40vh;
+    height: 8vh;
+}
+
+.remove-btn{
+    height: 5vh;
+    width: 5vh;
+    margin: 4%; 
+    border-radius: 15px;
+    background-color:rgb(247, 195, 101);
+    cursor: pointer;
+}
+
+.button{
+    width : 50vh;
+    height: 8vh;
+    /* padding: 1%; */
+    align-items: center;
+    background-color: rgb(247, 195, 101);
+    margin : 2%;
+    cursor: pointer;
+}
+
+.header-container h2{
+    padding: 3vh; 
+}
+
+
+
+.header-container{
+    display: flex;
+    height: 15vh;
+    color: #606060;
+    background-color: #F6F6F6;
+    justify-content: space-between;
+}
+
+.path-container p{
+    padding: 4vh;  
+}
+
+
+.store-recipe-title{
+    height: 8vh;
+    width: 50vh;
+}
+
+.recipe-title-container input{
+    background:white;
+    padding-left: 1vh;
+}
+
+.recipe-title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+
+}
+
+
+.recipe-description-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+.recipe-description-container label{
+    padding: 2% 0;
+}
+
+
+.recipe-description-container textarea{
+    height: 25vh;
+    width: 50vh;
+    padding-left: 1vh;
+}
+
+.choose-category-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+
+.ingredients-box{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5% ;
+    padding-left: 5%;
+}
+
+.ingredients-container{
+    /* padding: 0 5%; */
+}
+
+.ingredients-container input{
+    margin-right : 2%;
+    margin-top : 2%;
+}
+
+
+
+.description-box{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5% ;
+    padding-left: 5%;
+}
+
+.description-container{
+    /* padding: 2% 5%; */
+  
+}
+
+/* .description-container input{
+    padding: 2% 5%;
+  
+} */
+
+
+
+.preparation-time-container{
+    padding: 1% 5%;
+    margin-top : 2%;
+}
+
+
+.servings-container{
+    padding: 5% ;   
+}
+
+.calories-container{
+    padding: 5%;
+}
