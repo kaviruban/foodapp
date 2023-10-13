@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import "./AddReceipeCompStyl.css";
 import Dropdown from "../DropDownBox/DropDownComp";
 import { useDispatch, useSelector } from "react-redux";
-import  addRecipe  from "../../Features/Send/SendSlice";
+import  { addRecipe } from "../../Features/Send/SendSlice";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 // var count  = 12;
 function SubmitRecipeComp() {
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -60,12 +64,13 @@ function SubmitRecipeComp() {
 
   function HandleSubmit() {
     
+    
     // Collect all the data you want to send
     const recipeData = {
       // id : count,
       receipeName: recipeTitle,
       recipeDescription: recipeDescription,
-      card_img: "../../Assets/Images/recipeThumb-02.3661f369.jpg",
+      card_img: require("../../Assets/Images/recipeThumb-02.3661f369.jpg"),
       rating : "3",
       duration: preparationTime,
       Ingredients: [ingredients],
@@ -78,7 +83,22 @@ function SubmitRecipeComp() {
     console.log(recipeData);
     // Dispatch the action with the recipe data
     dispatch(addRecipe(recipeData));
-    alert("Recipe SuccessFully Added")
+    toast.success('Successfully Recipe Added !', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+      });
+      setTimeout(() => {
+        navigate("/home")
+      } , 2000)
+    
+    
+    // alert("Recipe SuccessFully Added")
   }
 
 
@@ -86,6 +106,7 @@ function SubmitRecipeComp() {
 
   return (
     <div>
+      <ToastContainer />
       <div className="header-container">
         <h2>Submit Recipe</h2>
         <div className="path-container">
