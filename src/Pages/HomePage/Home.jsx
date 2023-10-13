@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div>
       <Navbar />
-      {/* <SliderComp /> */}
+      
       <HomeComponent />
     </div>
   );

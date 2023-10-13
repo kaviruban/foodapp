@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Loginpage.css";
 import { useNavigate } from "react-router-dom";
 
 
 
+
 function Login() {
+
+  const[userId , setUserId] = useState("");
+  const[userPassword , setUserPassword] = useState("");
+
+
+  function HandleSubmit(){
+
+  }
   const navigate = useNavigate();
   return (
     <div className="parent-login-container">
@@ -12,17 +21,14 @@ function Login() {
       <div className="login-container">
         <form>
           <label htmlFor="">E-mail</label>
-          <input type="text" placeholder="Your E-mail" />
+          <input type="text" placeholder="Your E-mail"  onChange={HandleSubmit}/>
           <label htmlFor="">Password</label>
-          <input type="password" placeholder="Enter the password" />
+          <input type="password" placeholder="Enter the password" onChange={HandleSubmit} />
         </form>
       </div>
       <div>
         <button className="auth-buttons" onClick={() => navigate("/home")}>
           Login
-        </button>
-        <button className="auth-buttons" onClick={() => navigate("/register")}>
-          Register
         </button>
       </div>
     </div>
