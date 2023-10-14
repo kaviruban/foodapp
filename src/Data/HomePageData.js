@@ -22,7 +22,9 @@ export const FoodData = [
       },
     ],
     Directions: [
-      "In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done.",
+      "In a Dutch oven, heat oil over medium heat until hot, but not smoking.",
+      " Pat the meat dry with paper towels and brown in batches",
+      " transferring the meat with a slotted spoon to a bowl as they are done.",
 
       "In the fat remaining in the pot, cook the onions until softened, about 5 minutes",
       ,
