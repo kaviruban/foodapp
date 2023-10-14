@@ -10,7 +10,7 @@ export const recipeBookSlice = createSlice({
     reducers :{
         addRecipe : (state , action) => {
             state.value.push(action.payload)
-            console.log("............geajegbeukqbk")
+            // console.log("............geajegbeukqbk")
         }
 
     }

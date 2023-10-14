@@ -80,7 +80,7 @@ function SliderComp() {
   useEffect(() => {
     setImage(sliderData[0])
   }, []);
-  console.log(Image);
+  // console.log(Image);
   // const SliderImages = [BgImgOne, BgImgTwo, BgImgThree, BgImgFour];
   // return SliderImages.map((data, index) => {
   //   return <img src={data} alt="nothing-just-a-slider-image" />;

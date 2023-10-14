@@ -16,7 +16,7 @@ function HomeComponent() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const fd = useSelector((state) => state?.recipe?.value);
-  console.log(fd);
+  // console.log(fd);
     
 
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ function HomeComponent() {
             <p>{data.rating}</p>
             <p>{data.duration}</p>
           </div>
-          <div className="view-btn" onClick={() => navigate("/show-recipe")}>
+          <div className="view-btn" onClick={() => navigate("/show-recipe", {state:data})}>
             view
           </div>
         </div>

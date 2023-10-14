@@ -71,7 +71,7 @@ function SubmitRecipeComp() {
       // calories: calories,
     };
 
-    console.log(recipeData);
+    // console.log(recipeData);
     // Dispatch the action with the recipe data
     dispatch(addRecipe(recipeData));
     toast.success("Successfully Recipe Added !", {
