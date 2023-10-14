@@ -22,7 +22,7 @@ function ReceipeComponent() {
           <img src={state.card_img} alt="" />
         </div>
         <div className="ingredients-container">
-          <p>{state.Ingredients}</p>
+          {/* <p>{state.Ingredients}</p> */}
         </div>
         <div className="directions-container">
           <p>{state.Directions}</p>
